@@ -1,0 +1,5 @@
+malloc을 할때 local에 있던 remote에 있던 사용자는 전체를 할당받았다고 해주는 illusion을 제공하는 구현
+- 현재 mmap 구현은 메모리가 800기가까지밖에 안잡힘.
+- page fault handler + segmentation fault 이외에 다른 아이디어?
+큰 메모리를 가진 가상의 device를 구현?
+Shared memory model
