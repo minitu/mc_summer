@@ -1,0 +1,10 @@
+5/6
+Met with Professor Lee and PhD Candidate Park. Finalized discussions.
+
+By 5/14
+- Read Intro_to_IB_for_End_Users & RDMA_Aware_Programming_user_manual
+- Understand how we can use RDMA to let a host program request memory space greater than the memory space of its compute device
+
+5/14
+* Read paper in 2005 "Swapping to Remote Memory over InfiniBand: An Approach using a High Performance Network Block Device"
+- 

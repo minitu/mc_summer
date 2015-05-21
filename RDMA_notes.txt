@@ -1,0 +1,17 @@
+* 3 technologies
+- InfiniBand, Ethernet RoCE, Ethernet iWARP
+- Share a common user API, but different physical and link layers
+
+* RDMA Characteristics
+- Provides a messaging service which applications can use to directly access the virtual memory on remote computers (Channel based I/O)
+- Low latency through stack bypass and copy avoidance
+- Channel based I/O : OS establishes a channel and then allows applications to directly exchange messages without further OS intervention
+- Multicast also supported
+
+- The memory semantic is somewhat different; in this case the receiving side
+application registers a buffer in its virtual memory space. It passes control of
+that buffer to the sending side which then uses RDMA READ or RDMA WRITE
+operations to either read or write the data in that buffer.
+- The software transport interface also defines all the methods and mechanisms that
+an application needs to take full advantage of the RDMA message transport
+service.
