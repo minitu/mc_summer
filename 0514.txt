@@ -3,3 +3,23 @@ malloc을 할때 local에 있던 remote에 있던 사용자는 전체를 할당받았다고 해주는 ill
 - page fault handler + segmentation fault 이외에 다른 아이디어?
 큰 메모리를 가진 가상의 device를 구현?
 Shared memory model
+
+=>
+
+* Distributed shared memory.
+- OS에 구현 (kernel driver 등): 개발자에게 transparent
+- Library 등으로 구현: 다르게 프로그래밍해야.
+- 이런 view를 제공하면 mpi 등은 사용 못하지 않나?
+
+* Algorithms for DSM
+1. Central Server: need a powerful central server - not suitable for cluster environments
+2. Migration: only one node has access to shared memory at a time - disastrous
+3. Read-Replication: multiple readers/one writer - might be good if we have a lot more reads than writes, but need to keep track of copies
+4. Full-Replication: multiple readers/multipler writers - data consistency problem, but can be solved with gap-free sequencer
+
+* Case Studies
+- Yale의 IVY
+- UCLA의 Mirage: reduce thrashing, kernel modification
+- Georgia Tech의 Clouds: segment fault handler 사용
+- TreadMarks: 역시 segment fault handler
+- OpenSSI, Mosix ???
