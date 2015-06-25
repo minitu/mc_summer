@@ -1,0 +1,15 @@
+147.46.216.211
+root
+test22554
+
+147.46.216.147
+test
+test
+
+ssh root@c1n1
+test22554
+45 nodes
+
+
+ssh Administrator@192.168.0.150
+password

@@ -1,0 +1,19 @@
+- linux/mm/vmalloc.c
+- vmalloc을 수정해서 physical memory에 mapping하지 않게 만들기
+- vmalloc -> __vmalloc_node_flags -> __vmalloc_node -> __vmalloc_node_range -> __get_vm_area_node, __vmalloc_area_node, kmemleak_alloc
+- __get_vm_area_node -> kzalloc_node, alloc_vmap_area, setup_vmalloc_vm
+- alloc_page로 넘겨지는 gfp_mask는 GFP_KERNEL | __GFP_HIGHMEM | __GFP_NOWARN
+- mm/mempolicy.c에 alloc_pages_current
+
+- vmalloc 대신 ioremap 사용? 문제는 여러 노드의 메모리를 하나의 device로 보여주는 것
+- ioremap_nocache 사용
+- Like vmalloc, ioremap builds new page tables; unlike vmalloc, however, it doesn’t
+actually allocate any memory.
+- ioremap 썼더니 128GB까지 할당됨 (physical memory가 64GB인데)
+- cat /proc/meminfo 여기에 VmallocTotal이 251658176 KB (약 250GB) 밖에 안됨!
+- ARM은 39bit virtual address를 써서 256GB가 한계. 근데 page size를 64K로 키우면 42bit를 쓸 수 있음. (몇테라 될듯)
+  ARM은 이렇게 하고 Intel 등은 32TB정도 되니까 둘다 해서 보여주면 될듯.
+
+- struct page: defined in linux/mm_types.h
+
+console=ttyS0,9600n8r ro

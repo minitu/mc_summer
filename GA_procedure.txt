@@ -1,0 +1,5 @@
+1. NGA_Create (capi.c)
+2. wnga_create (ga-wapi.c)
+3. pnga_create (base.c)
+4. pnga_create_config (base.c)
+5. 

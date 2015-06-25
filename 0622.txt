@@ -1,0 +1,10 @@
+* Malloc 얼마나 크게 잡을 수 있는지 테스트해보기
+- single node: 22GB~23GB (23GB에서 fail)
+
+* mmap 등을 이용해서 가상메모리 얼마나 크게 잡을 수 있는지 테스트
+- 48 bits = 256TB 최대.
+- mmap을 새로 구현하거나 device driver를 새로 만들어야 될듯.
+
+* mmap 새로 구현?
+- LDD3 mmap 부분 읽어보기
+- /media/nfs/mem_driver

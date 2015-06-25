@@ -1,0 +1,6 @@
+- 2가지 모드 제공: driver + library (overhead 적음)
+
+1. 드라이버 간의 통신 구현 (P2P): 각 노드가 free한 메모리 용량을 broadcast
+- RDMA 사용? kernel API 있으니까...
+- c1n1 & c2n1
+- 10G Ethernet interconnect

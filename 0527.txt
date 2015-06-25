@@ -1,0 +1,31 @@
+1. malloc에서 큰 메모리를 가지고 있다는 illusion. (구현 찾아보기)
+   읽고 쓸때 실제로 어떻게 작동하는지.
+2. memory manager 설계. memory manager는 access하는 데이터가 local인지 remote인지 확인.
+  local이면 그냥 읽고 쓰고. remote면 page fault 등을 통해 데이터를 가져오는 방법을 정의해줘야.
+  manager 상에 page table 필요.
+3. Local에 쓸 때 remote에 copy가 있을 경우 어떻게 처리할꺼냐. (Invalidate 메세지 뿌리기)
+4. Read/write frequency에 따라 owner 옮기기? write가 발생할 때 그놈이 주인이 되는 방법이 좋을듯.
+
+Target을 big data application 하나를 잡자. 여기에서 성능 improvement가 있어야.
+
+http://www.sai.msu.su/sal/C/2/ <---- 여기에 참고자료 많음.
+
+* TreadMarks
+- 구현이 없어, Rice 대학에 메일 보내놓음
+
+* ScaleMP
+- 메모리는 다 쓸 수 있는데 코어는 host꺼밖에 못쓰는듯? (Free 버전)
+- Free 버전 다운 받았는데 소스코드는 없는듯
+
+* Global Arrays Toolkit
+- http://hpc.pnl.gov/globalarrays/
+- 아직도 활발히 개발중! 제일 좋을듯.
+- int, float, double 등 primitive types의 array만 사용 가능? 다른 datatype은...? 
+- Heterogeneous platform은 support 안한다는데...
+
+* Quarks
+- http://www.cs.utah.edu/flux/quarks.html
+- ftp://ftp.flux.utah.edu/flux/mach/ALPHA/quarks-doc.html
+- 1995년이 마지막
+- 소스코드 링크는 있는데 깨짐
+

@@ -1,0 +1,8 @@
+* Mem driver
+- /media/nfs/jmem
+- nopage method: When a user process attempts to access a page in a VMA that is not present in memory,
+the associated nopage function is called.
+- dmesg 명령으로 kernel message 확인 가능
+- vmalloc 공간 크기: 2^46 = 64TB
+- nopage를 fault로 바꾸기.
+- 부팅할때 메모리 공간을 크게 잡아주는법? or vmalloc 수정
